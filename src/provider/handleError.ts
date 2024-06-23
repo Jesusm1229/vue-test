@@ -1,7 +1,7 @@
 import { h } from "vue";
 import { toastMessage } from "./toastProvider";
 
-export default function handleError(error: any) {
+export const handleError = (error: any) => {
 
     console.error(error);
     let errorMessage = 'An unexpected error occurred';

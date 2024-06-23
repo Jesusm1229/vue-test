@@ -31,13 +31,12 @@ watch(() => gameStore.gameOver, (newVal) => {
 });
 
 
-
-function closeModal() {
+const closeModal = () => {
     isOpen.value = false;
     // Also update the store if necessary
     gameStore.setGame(false);
     forceRerender();
-}
+};
 
 </script>
 

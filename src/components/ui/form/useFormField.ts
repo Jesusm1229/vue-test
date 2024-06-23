@@ -2,7 +2,7 @@ import { FieldContextKey, useFieldError, useIsFieldDirty, useIsFieldTouched, use
 import { inject } from 'vue'
 import { FORM_ITEM_INJECTION_KEY } from './injectionKeys'
 
-export function useFormField() {
+export const useFormField = async () => {
   const fieldContext = inject(FieldContextKey)
   const fieldItemContext = inject(FORM_ITEM_INJECTION_KEY)
 

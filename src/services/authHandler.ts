@@ -5,17 +5,17 @@ import { resetUser } from "./localStorageHandler";
 import { isTokenExpired } from "./tokenHandler";
 
 
-export async function registerUser(values: { username: string, score: { points: number } }) {
+export const registerUser = async (values: { username: string, score: { points: number } }) => {
     const response = await axios.post('https://localhost:7299/api/authentication', values);
     return response.data;
-}
+};
 
-export async function loginUser(values: { username: string }) {
+export const loginUser = async (values: { username: string }) => {
     const response = await axios.post('https://localhost:7299/api/authentication/login', values);
     return response.data;
-}
+};
 
-export async function logOutUser() {
+export const logOutUser = async () => {
     const userObj = getUserObjectFromLocalStorage();
     if (!userObj) return;
 
@@ -31,23 +31,12 @@ export async function logOutUser() {
     try {
         await axios.post('https://localhost:7299/api/authentication/logout', token);
         resetUser();
-        toastMessage(
-            'Logout successful',
-            h('div', { class: 'text-wrap' }, 'You have been logged out'),
-            5000,
-            'success',
-        );
     } catch (error) {
-        toastMessage(
-            'Logout failed',
-            h('div', { class: 'text-wrap' }, 'An error occurred while logging out'),
-            5000,
-            'destructive',
-        );
+        // Handle logout error
     }
-}
+};
 
-function getUserObjectFromLocalStorage() {
+const getUserObjectFromLocalStorage = () => {
     const storedUserObj = localStorage.getItem('UserObject');
     if (!storedUserObj) return null;
 
