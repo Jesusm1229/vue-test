@@ -51,4 +51,10 @@
     "vite": "^5.2.8",
     "vue-tsc": "^2.0.11"
   }
+  ,
+  "rules": {
+    "vue/multi-word-component-names": 0,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+}
 }

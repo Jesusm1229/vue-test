@@ -1,4 +1,3 @@
-import type { Player } from "@/lib/types";
 import axios from "axios";
 
 export async function fetchScoresById(idUsername: string, accessToken: string) {

@@ -1,9 +1,8 @@
-import { toast } from "@/components/ui/toast";
+import { toastMessage } from "@/provider/toastProvider";
 import axios from "axios";
 import { h } from "vue";
 import { resetUser } from "./localStorageHandler";
-import { isTokenExpired, RefreshToken } from "./tokenHandler";
-import { toastMessage } from "@/provider/toastProvider";
+import { isTokenExpired } from "./tokenHandler";
 
 
 export async function registerUser(values: { username: string, score: { points: number } }) {

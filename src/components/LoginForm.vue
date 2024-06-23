@@ -44,6 +44,8 @@
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { useToast } from '@/components/ui/toast/use-toast'
+import { loginUser } from '@/services/authHandler'
+import { scheduleTokenRefresh } from '@/services/tokenHandler'
 import { usePlayerStore } from '@/stores/player'
 import { vAutoAnimate } from '@formkit/auto-animate/vue'
 import { toTypedSchema } from '@vee-validate/zod'
@@ -53,9 +55,6 @@ import { h, ref } from 'vue'
 import * as z from 'zod'
 import { Button } from './ui/button'
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
-import { jwtDecode } from "jwt-decode";
-import { scheduleTokenRefresh } from '@/services/tokenHandler'
-import { loginUser } from '@/services/authHandler'
 
 const { toast } = useToast()
 
