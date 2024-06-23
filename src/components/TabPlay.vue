@@ -252,7 +252,7 @@
             </CardHeader>
             <CardContent class="flex flex-col md:grid md:grid-cols-2">
 
-                <SaveScore :responseData="responseData" />
+                <SaveScoreButton :responseData="responseData" />
 
                 <div class="flex-col justify-end col-span-1">
                     <div class="flex-col text-right justify-right">
@@ -305,7 +305,7 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
 import { h, reactive, ref } from 'vue'
 import * as z from 'zod'
-import SaveScore from './SaveScore.vue'
+import SaveScoreButton from './SaveScoreButton.vue'
 import { Button } from './ui/button'
 import { Card, CardHeader, CardTitle } from './ui/card'
 import CardContent from './ui/card/CardContent.vue'
